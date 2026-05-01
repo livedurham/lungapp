@@ -2577,62 +2577,109 @@ adenoPlaceholders.forEach(p=>{
       <div class="tx-block theme-blue">
         <div class="tx-block-header">
           <span class="tx-block-badge">第一線</span>
-          <span class="tx-block-title">首選（Category 1）</span>
+          <span class="tx-block-title">ALK TKI — 依 PFS 排列（Category 1）</span>
+          <span class="tx-block-sub">健保：五藥均給付，僅得擇一使用</span>
         </div>
         <div class="tx-block-body">
 
+          <!-- Lorlatinib -->
           <div class="tx-row">
-            <div class="tx-row-label">首選 <span class="pill-tag tag-nhi" style="margin-left:4px;">健保</span></div>
-            <div class="tx-pill-row">
-              <span class="pill pill-immuno">Alectinib</span>
-            </div>
-            <div class="tx-note ae-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'" style="cursor:pointer;color:var(--nsclc);font-weight:500;">▸ 主要副作用</div>
-            <div class="ae-panel" style="display:none;margin-top:6px;padding:10px 12px;background:var(--surface);border-radius:6px;font-size:13px;font-family:'Noto Sans TC',sans-serif;color:var(--ink-light);line-height:1.7;">
-              <strong>常見：</strong>便秘、水腫、肌痛、噁心、貧血、ALT/AST 升高、光敏感<br>
-              <strong>需注意：</strong>間質性肺炎（ILD）、肝毒性（監測肝功能）、心搏過緩
-            </div>
-          </div>
-
-          <div class="tx-divider"></div>
-
-          <div class="tx-row">
-            <div class="tx-row-label">首選 <span class="pill-tag tag-nhi" style="margin-left:4px;">健保</span></div>
+            <div class="tx-row-label">Lorlatinib（3代）<span class="pill-tag tag-nhi" style="margin-left:4px;">健保</span></div>
             <div class="tx-pill-row">
               <span class="pill pill-immuno">Lorlatinib</span>
             </div>
+            <div class="tx-note" style="color:var(--nsclc);font-weight:500;">CROWN（5年，2024 ASCO）：Median PFS 未達到 vs 9.1mo（HR 0.19）｜5年PFS <strong>60%</strong> vs 8%</div>
+            <div class="tx-note">腦轉移：顱內反應率 82%，完全顱內緩解 71%｜5年無顱內進展 HR 0.08（有腦轉移）</div>
             <div class="tx-note ae-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'" style="cursor:pointer;color:var(--nsclc);font-weight:500;">▸ 主要副作用</div>
             <div class="ae-panel" style="display:none;margin-top:6px;padding:10px 12px;background:var(--surface);border-radius:6px;font-size:13px;font-family:'Noto Sans TC',sans-serif;color:var(--ink-light);line-height:1.7;">
               <strong>常見：</strong>高血脂（高膽固醇、高三酸甘油脂）、水腫、周邊神經病變、體重增加<br>
-              <strong>需注意：</strong>認知功能障礙（記憶、語言、情緒）、間質性肺炎、PR interval 延長<br>
-              <strong>特別提醒：</strong>需定期監測血脂，多數需使用降脂藥物
+              <strong>特別注意：</strong>認知功能障礙（記憶、語言、情緒）— 多數為輕中度，可逆<br>
+              <strong>心血管：</strong>PR interval 延長、高血壓<br>
+              <strong>Grade 3-4 AE：</strong>72% vs Crizotinib 56%（主要為血脂異常）<br>
+              <strong>監測：</strong>定期監測血脂，多數需合併降脂藥物
             </div>
           </div>
 
           <div class="tx-divider"></div>
 
+          <!-- Alectinib -->
           <div class="tx-row">
-            <div class="tx-row-label">其他建議（Category 1）<span class="pill-tag tag-nhi" style="margin-left:4px;">健保</span></div>
+            <div class="tx-row-label">Alectinib（2代）<span class="pill-tag tag-nhi" style="margin-left:4px;">健保</span></div>
+            <div class="tx-pill-row">
+              <span class="pill pill-immuno">Alectinib</span>
+            </div>
+            <div class="tx-note" style="color:var(--nsclc);font-weight:500;">ALEX（成熟數據）：Median PFS <strong>34.1 mo</strong> vs 10.2 mo（HR 0.47）｜5年OS 62.5% vs 45.5%</div>
+            <div class="tx-note">腦轉移：CNS 進展 12% vs Crizotinib 45%</div>
+            <div class="tx-note ae-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'" style="cursor:pointer;color:var(--nsclc);font-weight:500;">▸ 主要副作用</div>
+            <div class="ae-panel" style="display:none;margin-top:6px;padding:10px 12px;background:var(--surface);border-radius:6px;font-size:13px;font-family:'Noto Sans TC',sans-serif;color:var(--ink-light);line-height:1.7;">
+              <strong>常見：</strong>便秘、水腫、肌痛、噁心、貧血、ALT/AST 升高、光敏感<br>
+              <strong>需注意：</strong>間質性肺炎（ILD）、心搏過緩<br>
+              <strong>肝毒性：</strong>需定期監測肝功能<br>
+              <strong>Grade 3-4 AE：</strong>41% vs Crizotinib 50%（毒性較低）
+            </div>
+          </div>
+
+          <div class="tx-divider"></div>
+
+          <!-- Brigatinib -->
+          <div class="tx-row">
+            <div class="tx-row-label">Brigatinib（2代）<span class="pill-tag tag-nhi" style="margin-left:4px;">健保</span></div>
             <div class="tx-pill-row">
               <span class="pill pill-immuno">Brigatinib</span>
             </div>
+            <div class="tx-note" style="color:var(--nsclc);font-weight:500;">ALTA-1L（最終分析）：Median PFS <strong>24.0 mo</strong> vs 11.1 mo（HR 0.48）｜3年PFS 43% vs 19%</div>
+            <div class="tx-note">腦轉移：顱內反應率 78% vs Crizotinib 29%</div>
             <div class="tx-note ae-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'" style="cursor:pointer;color:var(--nsclc);font-weight:500;">▸ 主要副作用</div>
             <div class="ae-panel" style="display:none;margin-top:6px;padding:10px 12px;background:var(--surface);border-radius:6px;font-size:13px;font-family:'Noto Sans TC',sans-serif;color:var(--ink-light);line-height:1.7;">
               <strong>常見：</strong>噁心、腹瀉、頭痛、血壓升高、肌酸激酶升高<br>
-              <strong>需注意：</strong>早期肺部事件（開始用藥7天內）、間質性肺炎、視覺障礙
+              <strong>特別注意：</strong>早期肺部事件（用藥前7天內），發生率約3–9%<br>
+              <strong>需注意：</strong>間質性肺炎、視覺障礙（複視、視力模糊）<br>
+              <strong>起始劑量：</strong>90mg × 7天導入期，再增至180mg
             </div>
           </div>
 
           <div class="tx-divider"></div>
 
+          <!-- Ceritinib -->
           <div class="tx-row">
-            <div class="tx-row-label">其他建議（Category 1）<span class="pill-tag tag-nhi" style="margin-left:4px;">健保</span></div>
+            <div class="tx-row-label">Ceritinib（2代）<span class="pill-tag tag-nhi" style="margin-left:4px;">健保</span></div>
+            <div class="tx-pill-row">
+              <span class="pill pill-immuno">Ceritinib</span>
+            </div>
+            <div class="tx-note" style="color:var(--nsclc);font-weight:500;">ASCEND-4（vs 化療）：Median PFS <strong>16.6 mo</strong> vs 8.1 mo（HR 0.55）</div>
+            <div class="tx-note">注意：與化療比較，非直接與 Crizotinib 比較</div>
+            <div class="tx-note ae-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'" style="cursor:pointer;color:var(--nsclc);font-weight:500;">▸ 主要副作用</div>
+            <div class="ae-panel" style="display:none;margin-top:6px;padding:10px 12px;background:var(--surface);border-radius:6px;font-size:13px;font-family:'Noto Sans TC',sans-serif;color:var(--ink-light);line-height:1.7;">
+              <strong>常見（腸胃毒性顯著）：</strong>腹瀉（75%）、噁心（65%）、嘔吐（60%）、腹痛、食慾下降<br>
+              <strong>需注意：</strong>QTc 延長、肝毒性（轉胺酶升高）、間質性肺炎、高血糖<br>
+              <strong>臨床實務：</strong>腸胃副作用較明顯，隨食物服用可改善；目前臨床較少作為首選
+            </div>
+          </div>
+
+          <div class="tx-divider"></div>
+
+          <!-- Crizotinib -->
+          <div class="tx-row">
+            <div class="tx-row-label">Crizotinib（1代）<span class="pill-tag tag-nhi" style="margin-left:4px;">健保</span></div>
             <div class="tx-pill-row">
               <span class="pill pill-chemo">Crizotinib</span>
             </div>
+            <div class="tx-note" style="color:var(--ink-muted);">PROFILE 1014：Median PFS <strong>10.9 mo</strong>（參照組）｜CNS 穿透力較差</div>
             <div class="tx-note ae-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'" style="cursor:pointer;color:var(--nsclc);font-weight:500;">▸ 主要副作用</div>
             <div class="ae-panel" style="display:none;margin-top:6px;padding:10px 12px;background:var(--surface);border-radius:6px;font-size:13px;font-family:'Noto Sans TC',sans-serif;color:var(--ink-light);line-height:1.7;">
-              <strong>常見：</strong>視覺障礙（閃光感）、噁心嘔吐、水腫、便秘、轉胺酶升高<br>
-              <strong>需注意：</strong>QTc 延長、間質性肺炎、肝毒性、心搏過緩
+              <strong>常見：</strong>視覺障礙（閃光感，約60%）、噁心嘔吐、水腫、便秘、轉胺酶升高<br>
+              <strong>需注意：</strong>QTc 延長、間質性肺炎、肝毒性、心搏過緩<br>
+              <strong>Grade 3-4 AE：</strong>50%（高於 Alectinib）
+            </div>
+          </div>
+
+          <div class="tx-divider"></div>
+
+          <div class="info-box box-gold">
+            <div class="info-box-title">健保規定：僅得擇一使用</div>
+            <div class="info-box-body">
+              五種 ALK TKI 第一線健保均給付，但<strong>僅得擇一，除嚴重不良反應或耐受不良外不得互換</strong><br>
+              ⚠ EGFR+/ALK+ 病人不建議 IO；腦轉移者優先考慮 CNS 穿透力強的藥物（Lorlatinib、Alectinib、Brigatinib）
             </div>
           </div>
 
