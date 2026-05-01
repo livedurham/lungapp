@@ -57,7 +57,7 @@
 
     /* ── Headers ── */
     .hospital-tag { font-family:'Noto Sans TC',sans-serif; font-size:clamp(15px,2.2vw,17px); font-weight:400; letter-spacing:0.1em; color:var(--gold); margin-bottom:16px; }
-    h1 { font-family:Arial,sans-serif; font-weight:700; font-size:clamp(38px,7vw,72px); line-height:1.05; color:#2b4a6b; text-align:center; }
+    h1 { font-family:Arial,sans-serif; font-weight:700; font-size:clamp(38px,7vw,72px); line-height:1.05; color:#000000; text-align:center; }
     h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300; font-size:clamp(20px,3.2vw,30px); letter-spacing:0.18em; color:var(--ink-light); margin-top:8px; }
 
     @media (prefers-color-scheme: dark) {
@@ -67,15 +67,50 @@
         --ink: #f0f0f0;
         --ink-light: #b0b0b0;
         --rule: #333333;
-       }
-       html, body { background: #121212; color: #f0f0f0; }
-        .card-en { color: #e0e0e0; }
-        .card-zh { color: #b0b0b0; }
-        .nsclc-color { color: #6899cc; }
-        .sclc-color { color: #cc7777; }
-
+      }
+      html, body { background: #121212; color: #f0f0f0; }
       #screen-home h1 { color: #f0f0f0; }
       #screen-home h1 .sub { color: #b0b0b0; }
+      .card { background: #1e1e1e; border-color: #333333; }
+      .card-en { color: #e0e0e0 !important; }
+      .card-zh { color: #b0b0b0 !important; }
+      .card-abbr { color: #888888 !important; }
+      .card-note { color: #888888 !important; }
+      .card-cta { color: #888888 !important; }
+      .card-divider { background: #333333; }
+      .nsclc-color { color: #6899cc !important; }
+      .sclc-color { color: #cc7777 !important; }
+      .ph-title { color: #e0e0e0 !important; }
+      .ph-zh { color: #b0b0b0 !important; }
+      .ph-type { color: #888888 !important; }
+      .nav-label { color: #888888 !important; }
+      .prompt { color: #888888 !important; }
+      .back-btn { color: #888888; border-color: #333333; }
+      .staging-card { background: #1e1e1e; border-color: #333333; }
+      .tx-block { background: #1e1e1e; }
+      .tx-block-body { background: #1a1a1a; }
+      .tx-note { color: #888888; }
+      .tx-row-label { color: #888888; }
+      .tx-or { color: #555555; }
+      .info-box { border-color: #333333; }
+      .info-box.box-gold { background: #2a2010; }
+      .info-box.box-blue { background: #0a1530; }
+      .info-box.box-green { background: #0a2010; }
+      .pill-chemo { background: #102040; color: #6090d0; border-color: #203060; }
+      .pill-immuno { background: #301040; color: #a070d0; border-color: #502060; }
+      .pill-rt { background: #401020; color: #d06090; border-color: #601030; }
+      .pill-surg { background: #102010; color: #60b070; border-color: #205030; }
+      .pill-bsc { background: #252525; color: #909090; border-color: #404040; }
+      .pill-self { background: #302010; color: #c09030; border-color: #504020; }
+      .pill-tag.tag-nhi { background: #103020; color: #60b070; border-color: #205030; }
+      .pill-tag.tag-self { background: #302010; color: #c09030; border-color: #504020; }
+      .footer-dev { color: #555555; }
+      .footer-note { color: #555555; }
+      .footer-rule { background: #333333; }
+      .orn-line { background: #333333; }
+      .source-tag { background: #1e1e1e; border-color: #333333; color: #888888; }
+      table td, table th { border-color: #333333 !important; }
+      .tx-block-header { border-bottom-color: #333333 !important; }
     }
 
     .source-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin-top:18px; }
