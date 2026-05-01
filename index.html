@@ -61,6 +61,15 @@
     h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300; font-size:clamp(20px,3.2vw,30px); letter-spacing:0.18em; color:var(--ink-light); margin-top:8px; }
 
     @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121212;
+        --surface: #1e1e1e;
+        --ink: #f0f0f0;
+        --ink-light: #b0b0b0;
+        --rule: #333333;
+       }
+       html, body { background: #121212; color: #f0f0f0; }
+
       #screen-home h1 { color: #f0f0f0; }
       #screen-home h1 .sub { color: #b0b0b0; }
     }
