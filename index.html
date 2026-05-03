@@ -278,9 +278,10 @@
       <div class="hospital-tag">新光吳火獅紀念醫院胸腔內科</div>
       <h1>Lung Cancer<span class="sub">藥物治療建議</span></h1>
       <div class="source-tags">
-        <span class="source-tag">新光醫院準則</span>
-        <span class="source-tag">NCCN Guideline</span>
-        <span class="source-tag">健保給付條件</span>
+        <a class="source-tag" href="https://livedurham.github.io/lungapp/SKH_202512.pdf" target="_blank" style="text-decoration:none;cursor:pointer;">新光醫院準則</a>
+        <a class="source-tag" href="https://livedurham.github.io/lungapp/nsclc5_2026.pdf" target="_blank" style="text-decoration:none;cursor:pointer;">NCCN Guideline (NSCLC)</a>
+        <a class="source-tag" href="https://livedurham.github.io/lungapp/sclc2_2026.pdf" target="_blank" style="text-decoration:none;cursor:pointer;">NCCN Guideline (SCLC)</a>
+        <a class="source-tag" onclick="goTo('screen-nhi-bulletin')" style="text-decoration:none;cursor:pointer;">健保給付最新公告</a>
       </div>
     </header>
     <div class="ornament anim d2"><div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line"></div></div>
@@ -3675,6 +3676,52 @@ adenoPlaceholders.forEach(p=>{
           </div>
 
         </div>
+      </div>
+
+    </div>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">Version 1.0 &nbsp;|&nbsp; 2026-05-02</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+  </div>
+</div>
+
+<!-- ══════════ 健保給付公告 ══════════ -->
+<div id="screen-nhi-bulletin" class="screen">
+  <div class="page-wrap">
+    <div class="nav-row anim">
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <button class="back-btn" onclick="goTo('screen-home')">返回上頁</button>
+        <button class="back-btn" onclick="goTo('screen-home')">返回首頁</button>
+      </div>
+      <span class="nav-label">健保給付公告</span>
+    </div>
+    <div class="page-heading anim d1">
+      <div class="ph-type">Taiwan NHI Coverage Updates</div>
+      <div class="ph-title nsclc-color">健保給付條件公告</div>
+      <div class="ph-zh">肺癌相關藥物給付異動</div>
+    </div>
+    <div class="ornament anim d1"><div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line"></div></div>
+    <div class="detail-body anim d2" style="max-width:820px;width:100%;">
+
+      <!-- 2026-05-01 -->
+      <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;padding-bottom:16px;border-bottom:2px solid var(--rule);">
+        <div style="flex-shrink:0;min-width:100px;text-align:right;">
+          <div style="font-family:Arial,sans-serif;font-size:11px;letter-spacing:0.12em;color:var(--ink-muted);text-transform:uppercase;">2026-05-01</div>
+          <div style="margin-top:4px;">
+            <span class="pill-tag tag-nhi" style="font-size:11px;">新增給付</span>
+          </div>
+        </div>
+        <div style="flex:1;">
+          <div style="font-family:'Noto Sans TC',sans-serif;font-weight:700;font-size:15px;color:var(--ink);margin-bottom:6px;">Cemiplimab（LIBTAYO）</div>
+          <div style="font-family:'Noto Sans TC',sans-serif;font-size:13px;color:var(--ink-light);line-height:1.8;">
+            限鱗狀／非鱗狀非小細胞肺癌<strong>第一線</strong>用藥（單用）<br>
+            適應症：PD-L1 <strong>TPS ≥ 50%</strong><br>
+            <span style="color:var(--ink-muted);font-size:12px;">參考：EMPOWER-Lung 1、EMPOWER-Lung 3 試驗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- placeholder for future announcements -->
+      <div style="text-align:center;padding:24px;font-family:'Noto Sans TC',sans-serif;font-size:13px;color:var(--ink-muted);">
+        — 如有新增給付異動，請更新此頁面 —
       </div>
 
     </div>
