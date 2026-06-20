@@ -96,7 +96,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
   .pill-tag.tag-self { background: #302010; color: #c09030; border-color: #504020; }
   .pill-tag.tag-limited { background: #102830; color: #70c0d0; border-color: #205060; }
   .pill-tag.tag-warn { background: #302810; color: #d0a040; border-color: #504020; }
-  .ngs-input { background:#1a1a1a; border-color:#333333; }
+  .ngs-select { background:#1a1a1a; border-color:#333333; }
   .ngs-hit-card { background:#1e1e1e; border-color:#333333; }
   .ngs-hit-head { background:#0a1530; border-bottom-color:#333333; }
   .ngs-chip { background:#1e1e1e; border-color:#333333; color:#9dbbe0; }
@@ -242,21 +242,22 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
 
 /* NGS quick tool */
 .ngs-tool { display:flex; flex-direction:column; gap:12px; }
-.ngs-input {
+.ngs-select-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:12px; }
+.ngs-field { display:flex; flex-direction:column; gap:6px; font-family:'Noto Sans TC',Arial,sans-serif; font-size:13px; color:var(--ink-muted); letter-spacing:0.04em; }
+.ngs-field span { font-family:Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--nsclc); }
+.ngs-select {
   width:100%;
-  min-height:180px;
-  resize:vertical;
   border:1px solid var(--rule);
   border-radius:6px;
-  padding:14px 16px;
+  padding:11px 12px;
   background:var(--surface);
   color:var(--ink);
   font-family:'Noto Sans TC',Arial,sans-serif;
   font-size:14px;
-  line-height:1.7;
+  line-height:1.5;
   letter-spacing:0.02em;
 }
-.ngs-input:focus { outline:2px solid rgba(43,74,107,.22); border-color:var(--nsclc); }
+.ngs-select:focus { outline:2px solid rgba(43,74,107,.22); border-color:var(--nsclc); }
 .ngs-actions { display:flex; flex-wrap:wrap; gap:8px; }
 .ngs-button {
   border:1px solid var(--nsclc);

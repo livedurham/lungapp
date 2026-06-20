@@ -24,6 +24,7 @@ window.ngsBack = 'screen-nsclc';
 
 function openNgs(backId){
   window.ngsBack = backId || 'screen-nsclc';
+  setupNgsDropdowns();
   goTo('screen-ngs-recommend');
 }
 
@@ -44,8 +45,89 @@ function normalizeReportText(value){
     .toUpperCase();
 }
 
+const ngsDropdownGroups = [
+  { gene:'EGFR', options:[
+    { label:'EGFR del19 / L858R', query:'EGFR exon19 deletion L858R' },
+    { label:'EGFR exon20 insertion', query:'EGFR exon20 insertion' },
+    { label:'EGFR exon20 alteration（subtype 未明）', query:'EGFR exon20' },
+    { label:'EGFR T790M', query:'EGFR T790M' },
+    { label:'EGFR uncommon：G719X / S768I / L861Q', query:'EGFR G719X S768I L861Q' },
+    { label:'EGFR positive（subtype 未明）', query:'EGFR positive' },
+  ]},
+  { gene:'ALK', options:[
+    { label:'ALK fusion / rearrangement', query:'ALK fusion detected' },
+    { label:'ALK alteration（type 未明）', query:'ALK positive' },
+  ]},
+  { gene:'ROS1', options:[
+    { label:'ROS1 fusion / rearrangement', query:'ROS1 fusion detected' },
+    { label:'ROS1 alteration（type 未明）', query:'ROS1 positive' },
+  ]},
+  { gene:'MET', options:[
+    { label:'MET exon14 skipping', query:'MET exon14 skipping' },
+    { label:'MET mutation / amplification（非 exon14 或未明）', query:'MET mutation detected' },
+  ]},
+  { gene:'RET', options:[
+    { label:'RET fusion / rearrangement', query:'KIF5B-RET fusion' },
+    { label:'RET alteration（type 未明）', query:'RET positive' },
+  ]},
+  { gene:'KRAS', options:[
+    { label:'KRAS G12C', query:'KRAS G12C' },
+    { label:'KRAS alteration（非 G12C 或未明）', query:'KRAS positive' },
+  ]},
+  { gene:'BRAF', options:[
+    { label:'BRAF V600E', query:'BRAF V600E' },
+    { label:'BRAF alteration（非 V600E 或未明）', query:'BRAF positive' },
+  ]},
+  { gene:'NTRK', options:[
+    { label:'NTRK fusion / rearrangement', query:'NTRK fusion detected' },
+    { label:'NTRK alteration（非 fusion 或未明）', query:'NTRK positive' },
+  ]},
+  { gene:'HER2 / ERBB2', options:[
+    { label:'ERBB2 activating mutation / exon20 insertion', query:'ERBB2 exon20 insertion mutation' },
+    { label:'HER2 positive / amplification（type 未明）', query:'HER2 positive' },
+  ]},
+];
+
+function setupNgsDropdowns(){
+  const geneSelect = document.getElementById('ngs-gene-select');
+  const alterationSelect = document.getElementById('ngs-alteration-select');
+  if (!geneSelect) return;
+  if (!geneSelect.options.length) {
+    geneSelect.innerHTML = '<option value="">請選擇基因</option>' + ngsDropdownGroups.map((group, index) => `<option value="${index}">${group.gene}</option>`).join('');
+  }
+  if (alterationSelect && !alterationSelect.options.length) {
+    updateNgsAlterationOptions();
+  }
+}
+
+function updateNgsAlterationOptions(){
+  const geneSelect = document.getElementById('ngs-gene-select');
+  const alterationSelect = document.getElementById('ngs-alteration-select');
+  if (!geneSelect || !alterationSelect) return;
+  if (geneSelect.value === '') {
+    alterationSelect.innerHTML = '<option value="">請先選擇基因</option>';
+    return;
+  }
+  const group = ngsDropdownGroups[Number(geneSelect.value)];
+  if (!group) {
+    alterationSelect.innerHTML = '<option value="">請先選擇基因</option>';
+    return;
+  }
+  alterationSelect.innerHTML = '<option value="">請選擇 alteration</option>' + group.options.map((option, index) => `<option value="${index}">${option.label}</option>`).join('');
+}
+
+function selectedNgsQuery(){
+  setupNgsDropdowns();
+  const geneSelect = document.getElementById('ngs-gene-select');
+  const alterationSelect = document.getElementById('ngs-alteration-select');
+  if (!geneSelect?.value || !alterationSelect?.value) return '';
+  const group = ngsDropdownGroups[Number(geneSelect.value)];
+  const option = group?.options[Number(alterationSelect.value)];
+  return option?.query || '';
+}
+
 function reportContext(){
-  const raw = document.getElementById('ngs-input')?.value || '';
+  const raw = selectedNgsQuery();
   const text = normalizeReportText(raw);
   const lines = text.split(/\n|;|。|，/).map(line => line.trim()).filter(Boolean);
   return { raw, text, lines };
@@ -106,8 +188,17 @@ function renderNgsResults(matches){
   `).join('');
 }
 
+function setNgsEmpty(message){
+  const box = document.getElementById('ngs-results');
+  if (box) box.innerHTML = `<div class="ngs-empty">${escapeHtml(message)}</div>`;
+}
+
 function analyzeNgsReport(){
   const ctx = reportContext();
+  if (!ctx.raw) {
+    setNgsEmpty('請先選擇 Gene 與 Alteration，再按「判讀報告」。');
+    return;
+  }
   const matches = window.ngsTargets
     .filter(item => item.match(ctx))
     .sort((a,b) => a.priority - b.priority);
@@ -119,9 +210,11 @@ function analyzeNgsReport(){
 }
 
 function clearNgsReport(){
-  const input = document.getElementById('ngs-input');
-  if (input) input.value = '';
-  renderNgsResults([]);
+  const geneSelect = document.getElementById('ngs-gene-select');
+  const alterationSelect = document.getElementById('ngs-alteration-select');
+  if (geneSelect) geneSelect.value = '';
+  if (alterationSelect) alterationSelect.innerHTML = '<option value="">請先選擇基因</option>';
+  setNgsEmpty('尚未判讀。請選擇 Gene 與 Alteration 後，按「判讀報告」。');
 }
 
 function goTo(id){
