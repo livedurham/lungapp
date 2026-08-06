@@ -8,6 +8,17 @@
   <title>Lung Cancer 藥物治療建議</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
+
+  <!-- ── App icon / PWA ── -->
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#22405e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="肺癌用藥" />
+  <meta name="mobile-web-app-capable" content="yes" />
 </head>
 <body>
 
@@ -942,8 +953,9 @@
           <div class="info-box box-blue">
             <div class="info-box-title">Stage IB（pT2a N0，腫瘤 &gt; 3 cm 且 ≤ 4 cm）</div>
             <div class="info-box-body">
-              屬高風險特徵，<strong>可考慮術後 platinum-based 化療</strong><br>
-              <span class="pill-tag tag-nhi" style="display:inline;margin-right:4px;">健保</span>可能給付，需個別評估
+              屬高風險特徵，<strong>可考慮術後 platinum-based 化療</strong>（NCCN 建議，需個別評估風險效益）<br>
+              <span class="pill-tag tag-self" style="display:inline;margin-right:4px;">自費</span>健保<strong>不給付</strong>：新光準則明訂「stage I adjuvant chemo 無健保給付」，platinum 輔助化療自 Stage IIA（N1+）起才納入給付<br>
+              <span style="font-size:13px;color:var(--ink-muted);">※ UFUR 健保限<strong>肺腺癌</strong> stage IB 以上且 T2 &gt; 3 cm，Squamous 不適用</span>
             </div>
           </div>
         </div>
@@ -1520,7 +1532,7 @@
           <div class="tx-divider"></div>
 
           <div class="tx-row">
-            <div class="tx-row-label">高風險特徵* 才考慮 — 輔助化療 <span class="pill-tag tag-nhi" style="margin-left:4px;">健保</span><span style="font-family:'Noto Sans TC',sans-serif;font-size:11px;color:var(--amber);margin-left:6px;">T2a 不給付</span></div>
+            <div class="tx-row-label">高風險特徵* 才考慮 — 輔助化療 <span class="pill-tag tag-nhi" style="margin-left:4px;">健保</span><span style="font-family:'Noto Sans TC',sans-serif;font-size:11px;color:var(--amber);margin-left:6px;">T2a（Stage IB）不給付，T2b／Stage IIA 起才給付</span></div>
             <div class="tx-pill-row">
               <span class="pill pill-chemo">Platinum-based Chemo</span>
               <span style="font-family:Arial,sans-serif;font-size:13px;color:var(--ink-muted);">Category 2B</span>
@@ -2998,7 +3010,7 @@
             <div class="tx-note">誘導化療後，Pembrolizumab 維持治療（至多 2 年）</div>
             <div class="info-box box-gold" style="margin-top:8px;">
               <div class="info-box-title">⚠ 健保限制</div>
-              <div class="info-box-body">Pemetrexed 限使用學名藥：<strong>Pexeda（派癌休，台灣東洋）</strong></div>
+              <div class="info-box-body">Pemetrexed 限使用：<strong>Pexeda（派癌休）、Apeta、Pemetrexed Sandoz 或 Alimta Avos</strong><br><span style="font-size:11px;color:var(--ink-muted);">Alimta Avos 自 115/8/1 起納入（轉移性非鱗狀第一線 pembrolizumab 併用）</span></div>
             </div>
           </div>
         </div>
@@ -3625,6 +3637,27 @@
               <div style="margin-top:4px;"><span style="color:var(--nsclc);font-weight:700;">② 鱗狀細胞 NSCLC（SqCC）：</span>限與含鉑化療併用（<strong>不限Pemetrexed</strong>）</div>
             </div>
             <div style="margin-top:6px;color:var(--ink-muted);font-size:12px;">參考：CheckMate 816 試驗</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2026-08-01 -->
+      <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;padding-bottom:16px;border-bottom:2px solid var(--rule);">
+        <div style="flex-shrink:0;min-width:100px;text-align:right;">
+          <div style="font-family:Arial,sans-serif;font-size:11px;letter-spacing:0.12em;color:var(--ink-muted);text-transform:uppercase;">2026-08-01</div>
+          <div style="margin-top:4px;">
+            <span class="pill-tag tag-nhi" style="font-size:11px;">給付調整</span>
+          </div>
+        </div>
+        <div style="flex:1;">
+          <div style="font-family:'Noto Sans TC',sans-serif;font-weight:700;font-size:15px;color:var(--ink);margin-bottom:6px;">Pemetrexed 認可品項新增 Alimta Avos</div>
+          <div style="font-family:'Noto Sans TC',sans-serif;font-size:13px;color:var(--ink-light);line-height:1.9;">
+            115/8/1 起，<strong>轉移性非鱗狀 NSCLC 第一線</strong> pembrolizumab + pemetrexed + 含鉑（及 carboplatin 相關條文）之 pemetrexed 認可學名藥，由 Pexeda、Apeta、Pemetrexed Sandoz 增列 <strong>Alimta Avos</strong>（共 4 項）<br>
+            <div style="margin-top:8px;padding:10px 12px;background:var(--surface-alt,rgba(0,0,0,0.04));border-radius:8px;font-size:12px;line-height:1.8;">
+              <div style="font-weight:700;color:var(--ink);margin-bottom:4px;">注意：</div>
+              <div><span style="color:var(--nsclc);font-weight:700;">術前新輔助 nivolumab（非鱗狀）</span>之 pemetrexed 品項<strong>未</strong>納入 Alimta Avos，仍限 Pexeda、Apeta 或 Pemetrexed Sandoz。</div>
+            </div>
+            <div style="margin-top:6px;color:var(--ink-muted);font-size:12px;">依據：健保「藥品給付規定」第 9 節抗癌瘤藥物 9.2 / 9.26 / 9.69（115/8/1 生效）</div>
           </div>
         </div>
       </div>
