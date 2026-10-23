@@ -126,6 +126,10 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
   .source-tag { background: #1e1e1e; border-color: #333333; color: #888888; }
   table td, table th { border-color: #333333 !important; }
   .tx-block-header { border-bottom-color: #333333 !important; }
+  .comparison-table th { background:#0a1530; color:#9dbbe0; border-bottom-color:#333333; }
+  .comparison-table tbody tr:nth-child(even), .comparison-note { background:#1e1e1e; }
+  .comparison-table .drug-name { color:#f0f0f0; }
+  .comparison-table a { color:#8ab4f8; }
 }
 
 .source-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin-top:18px; }
@@ -238,6 +242,21 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
 .tx-or::after  { right:0; }
 
 .tx-note { font-family:'Noto Sans TC',sans-serif; font-size:14px; color:var(--ink-muted); line-height:1.65; letter-spacing:0.03em; }
+
+/* treatment comparison tables */
+.comparison-scroll { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.comparison-table { width:100%; min-width:780px; border-collapse:collapse; font-family:Arial,'Noto Sans TC',sans-serif; font-size:13px; line-height:1.55; }
+.comparison-table th { padding:11px 13px; text-align:left; vertical-align:bottom; color:var(--blue); background:var(--blue-bg); border-bottom:1px solid var(--blue-border); font-size:12px; letter-spacing:.04em; }
+.comparison-table td { padding:12px 13px; vertical-align:top; color:var(--ink-light); border-bottom:1px solid var(--rule); }
+.comparison-table tbody tr:last-child td { border-bottom:0; }
+.comparison-table tbody tr:nth-child(even) { background:var(--surface); }
+.comparison-table .drug-name { color:var(--ink); font-weight:700; }
+.comparison-table .brand-name { display:block; margin-top:2px; color:var(--ink-muted); font-size:12px; font-weight:400; }
+.comparison-table .pfs-detail { display:block; margin-top:3px; color:var(--ink-muted); font-size:12px; }
+.comparison-table .trial-links { display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
+.comparison-table a { color:#2563eb; font-weight:600; text-decoration:none; }
+.comparison-table a:hover { text-decoration:underline; }
+.comparison-note { padding:11px 14px 13px; color:var(--ink-muted); background:var(--surface); border-top:1px solid var(--rule); font-family:Arial,'Noto Sans TC',sans-serif; font-size:12px; line-height:1.6; }
 
 /* info / warning boxes */
 .info-box { border-radius:4px; padding:12px 16px; }
@@ -374,7 +393,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -636,7 +655,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
 
     </div>
 
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -668,7 +687,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -767,7 +786,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -801,7 +820,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -835,7 +854,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -940,7 +959,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1024,7 +1043,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1129,7 +1148,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1156,7 +1175,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1190,7 +1209,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1423,7 +1442,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1473,7 +1492,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1554,7 +1573,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1653,7 +1672,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1766,7 +1785,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1800,7 +1819,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1854,7 +1873,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -1978,7 +1997,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2012,7 +2031,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2157,7 +2176,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2302,7 +2321,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2336,7 +2355,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2424,7 +2443,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </div>
       </div>
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2493,7 +2512,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </div>
       </div>
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2536,7 +2555,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2615,7 +2634,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </div>
       </div>
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2681,7 +2700,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </div>
       </div>
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2730,7 +2749,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2811,7 +2830,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2855,7 +2874,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -2948,7 +2967,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -3010,7 +3029,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -3049,7 +3068,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -3083,7 +3102,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
         </a>
       </div>
     </main>
-    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d4"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -3143,7 +3162,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -3204,7 +3223,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -3219,6 +3238,72 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
     </div>
     <div class="ornament anim d1"><div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line"></div></div>
     <div class="detail-body anim d2">
+
+      <div class="tx-block theme-blue">
+        <div class="tx-block-header">
+          <span class="tx-block-badge">Comparison</span>
+          <span class="tx-block-title">ALK TKI Comparison</span>
+        </div>
+        <div class="tx-block-body" style="padding:0;gap:0;">
+          <div class="comparison-scroll" role="region" aria-label="ALK TKI comparison table" tabindex="0">
+            <table class="comparison-table">
+              <colgroup>
+                <col style="width:19%;">
+                <col style="width:21%;">
+                <col style="width:20%;">
+                <col style="width:40%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">Drug name（Generic / Brand）</th>
+                  <th scope="col">Median PFS（months）</th>
+                  <th scope="col">Clinical trial</th>
+                  <th scope="col">Major side effects</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="drug-name">Lorlatinib</span><span class="brand-name">Lorbrena</span></td>
+                  <td><strong>NR</strong> (7-year PFS: 55%)</td>
+                  <td><div class="trial-links"><a href="https://doi.org/10.1016/j.annonc.2026.05.692" target="_blank" rel="noopener">CROWN (2026) ↗</a></div></td>
+                  <td>Hyperlipidemia, edema, weight gain, cognitive/mood changes, neuropathy</td>
+                </tr>
+                <tr>
+                  <td><span class="drug-name">Alectinib</span><span class="brand-name">Alecensa</span></td>
+                  <td><strong>34.8</strong> (ALEX)<br><strong>41.6</strong> (ALESIA, Asian)</td>
+                  <td><div class="trial-links"><a href="https://doi.org/10.1016/j.annonc.2020.04.478" target="_blank" rel="noopener">ALEX (2020) ↗</a><a href="https://pubmed.ncbi.nlm.nih.gov/39282663/" target="_blank" rel="noopener">ALESIA (2024) ↗</a></div></td>
+                  <td>CPK elevation, myalgia, constipation, hepatotoxicity, bradycardia, hemolytic anemia</td>
+                </tr>
+                <tr>
+                  <td><span class="drug-name">Brigatinib</span><span class="brand-name">Alunbrig</span></td>
+                  <td><strong>24.0</strong></td>
+                  <td><div class="trial-links"><a href="https://doi.org/10.1016/j.jtho.2021.07.035" target="_blank" rel="noopener">ALTA-1L (2021) ↗</a></div></td>
+                  <td>CPK/lipase elevation, hypertension, early-onset pneumonitis</td>
+                </tr>
+                <tr>
+                  <td><span class="drug-name">Ensartinib</span><span class="brand-name">Ensacove</span></td>
+                  <td><strong>25.8</strong></td>
+                  <td><div class="trial-links"><a href="https://jamanetwork.com/journals/jamaoncology/fullarticle/2783490" target="_blank" rel="noopener">eXALT3 (2021) ↗</a></div></td>
+                  <td>Rash, pruritus, transaminase elevation, edema</td>
+                </tr>
+                <tr>
+                  <td><span class="drug-name">Ceritinib</span><span class="brand-name">Zykadia</span></td>
+                  <td><strong>16.6</strong><span class="pfs-detail">750 mg fasting regimen</span></td>
+                  <td><div class="trial-links"><a href="https://doi.org/10.1016/S0140-6736(17)30123-X" target="_blank" rel="noopener">ASCEND-4 (2017) ↗</a></div></td>
+                  <td>Diarrhea, nausea/vomiting, hepatotoxicity, hyperglycemia, QT prolongation</td>
+                </tr>
+                <tr>
+                  <td><span class="drug-name">Crizotinib</span><span class="brand-name">Xalkori</span></td>
+                  <td><strong>10.9</strong></td>
+                  <td><div class="trial-links"><a href="https://doi.org/10.1056/NEJMoa1408440" target="_blank" rel="noopener">PROFILE 1014 (2014) ↗</a></div></td>
+                  <td>Visual disturbance, GI toxicity, edema, hepatotoxicity, QT prolongation</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="comparison-note">PFS values are derived from different clinical trials and should not be directly compared.</p>
+        </div>
+      </div>
 
       <!-- 第一線 -->
       <div class="tx-block theme-blue">
@@ -3362,7 +3447,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -3443,7 +3528,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -3587,7 +3672,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -3801,7 +3886,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -4024,7 +4109,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -4110,7 +4195,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
     </div>
 
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -4199,7 +4284,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
       </div>
 
     </div>
-    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.21 (2026-09-09)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
+    <footer class="footer anim d3"><div class="footer-rule"></div><div class="footer-dev">Developer &nbsp;<strong>林鎮均・陳孟瑜</strong></div><p class="footer-note">V3.22 (2026-10-23)</p><p class="footer-note">僅供臨床參考使用 · For clinical reference only</p></footer>
   </div>
 </div>
 
@@ -4675,7 +4760,7 @@ function goTo(id){
   }
 }
 
-const APP_VERSION = 'V3.21 (2026-09-09)';
+const APP_VERSION = 'V3.22 (2026-10-23)';
 
 function setPwaManifest(){
   const manifest = {
