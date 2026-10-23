@@ -3239,72 +3239,6 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
     <div class="ornament anim d1"><div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line"></div></div>
     <div class="detail-body anim d2">
 
-      <div class="tx-block theme-blue">
-        <div class="tx-block-header">
-          <span class="tx-block-badge">Comparison</span>
-          <span class="tx-block-title">ALK TKI Comparison</span>
-        </div>
-        <div class="tx-block-body" style="padding:0;gap:0;">
-          <div class="comparison-scroll" role="region" aria-label="ALK TKI comparison table" tabindex="0">
-            <table class="comparison-table">
-              <colgroup>
-                <col style="width:19%;">
-                <col style="width:21%;">
-                <col style="width:20%;">
-                <col style="width:40%;">
-              </colgroup>
-              <thead>
-                <tr>
-                  <th scope="col">Drug name（Generic / Brand）</th>
-                  <th scope="col">Median PFS（months）</th>
-                  <th scope="col">Clinical trial</th>
-                  <th scope="col">Major side effects</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><span class="drug-name">Lorlatinib</span><span class="brand-name">Lorbrena</span></td>
-                  <td><strong>NR</strong> (7-year PFS: 55%)</td>
-                  <td><div class="trial-links"><a href="https://doi.org/10.1016/j.annonc.2026.05.692" target="_blank" rel="noopener">CROWN (2026) ↗</a></div></td>
-                  <td>Hyperlipidemia, edema, weight gain, cognitive/mood changes, neuropathy</td>
-                </tr>
-                <tr>
-                  <td><span class="drug-name">Alectinib</span><span class="brand-name">Alecensa</span></td>
-                  <td><strong>34.8</strong> (ALEX)<br><strong>41.6</strong> (ALESIA, Asian)</td>
-                  <td><div class="trial-links"><a href="https://doi.org/10.1016/j.annonc.2020.04.478" target="_blank" rel="noopener">ALEX (2020) ↗</a><a href="https://pubmed.ncbi.nlm.nih.gov/39282663/" target="_blank" rel="noopener">ALESIA (2024) ↗</a></div></td>
-                  <td>CPK elevation, myalgia, constipation, hepatotoxicity, bradycardia, hemolytic anemia</td>
-                </tr>
-                <tr>
-                  <td><span class="drug-name">Brigatinib</span><span class="brand-name">Alunbrig</span></td>
-                  <td><strong>24.0</strong></td>
-                  <td><div class="trial-links"><a href="https://doi.org/10.1016/j.jtho.2021.07.035" target="_blank" rel="noopener">ALTA-1L (2021) ↗</a></div></td>
-                  <td>CPK/lipase elevation, hypertension, early-onset pneumonitis</td>
-                </tr>
-                <tr>
-                  <td><span class="drug-name">Ensartinib</span><span class="brand-name">Ensacove</span></td>
-                  <td><strong>25.8</strong></td>
-                  <td><div class="trial-links"><a href="https://jamanetwork.com/journals/jamaoncology/fullarticle/2783490" target="_blank" rel="noopener">eXALT3 (2021) ↗</a></div></td>
-                  <td>Rash, pruritus, transaminase elevation, edema</td>
-                </tr>
-                <tr>
-                  <td><span class="drug-name">Ceritinib</span><span class="brand-name">Zykadia</span></td>
-                  <td><strong>16.6</strong><span class="pfs-detail">750 mg fasting regimen</span></td>
-                  <td><div class="trial-links"><a href="https://doi.org/10.1016/S0140-6736(17)30123-X" target="_blank" rel="noopener">ASCEND-4 (2017) ↗</a></div></td>
-                  <td>Diarrhea, nausea/vomiting, hepatotoxicity, hyperglycemia, QT prolongation</td>
-                </tr>
-                <tr>
-                  <td><span class="drug-name">Crizotinib</span><span class="brand-name">Xalkori</span></td>
-                  <td><strong>10.9</strong></td>
-                  <td><div class="trial-links"><a href="https://doi.org/10.1056/NEJMoa1408440" target="_blank" rel="noopener">PROFILE 1014 (2014) ↗</a></div></td>
-                  <td>Visual disturbance, GI toxicity, edema, hepatotoxicity, QT prolongation</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="comparison-note">PFS values are derived from different clinical trials and should not be directly compared.</p>
-        </div>
-      </div>
-
       <!-- 第一線 -->
       <div class="tx-block theme-blue">
         <div class="tx-block-header">
@@ -3436,6 +3370,14 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
           </div>
 
         </div>
+      </div>
+
+      <div class="tx-block theme-blue">
+        <div class="tx-block-header">
+          <span class="tx-block-badge">Comparison</span>
+          <span class="tx-block-title">ALK TKI Comparison</span>
+        </div>
+        <div class="tx-block-body" data-alk-tki-comparison style="padding:0;gap:0;"></div>
       </div>
 
       <div class="info-box box-gold">
@@ -4351,7 +4293,8 @@ window.ngsTargets = [
     priority: 50,
     title: 'ALK fusion / rearrangement',
     badge: 'ALK',
-    match: ctx => reportHas(ctx, /\bALK\b/i, /(FUSION|REARRANGEMENT|TRANSLOCATION|EML4[-\s:]?ALK|融合|重排|陽性|POSITIVE|DETECTED)/i),
+    comparison: 'alk-tki',
+    match: ctx => reportHas(ctx, /\bALK\b/i, /(FUSION|REARRANGEMENT|TRANSLOCATION|EML4[-\s:]?ALK|融合|重排)/i),
     drugs: [
       {name:'Lorlatinib', coverage:'健保-限條件', note:'ALK 陽性晚期 NSCLC 第一線；也可用於特定 ALK TKI 失敗後，需事前審查。'},
       {name:'Alectinib / Brigatinib / Ceritinib / Crizotinib', coverage:'健保-限條件', note:'ALK 陽性晚期 NSCLC 第一線可選；五種 ALK TKI 僅得擇一，除嚴重不良反應或耐受不良外不得互換。'}
@@ -4691,6 +4634,110 @@ function coverageClass(coverage){
   return 'tag-warn';
 }
 
+const alkTkiComparisonRows = [
+  {
+    generic: 'Lorlatinib',
+    brand: 'Lorbrena',
+    pfs: [{ value: 'NR', context: ' (7-year PFS: 55%)' }],
+    trials: [{ label: 'CROWN (2026)', url: 'https://doi.org/10.1016/j.annonc.2026.05.692' }],
+    sideEffects: 'Hyperlipidemia, edema, weight gain, cognitive/mood changes, neuropathy'
+  },
+  {
+    generic: 'Alectinib',
+    brand: 'Alecensa',
+    pfs: [
+      { value: '34.8', context: ' (ALEX)' },
+      { value: '41.6', context: ' (ALESIA, Asian)' }
+    ],
+    trials: [
+      { label: 'ALEX (2020)', url: 'https://doi.org/10.1016/j.annonc.2020.04.478' },
+      { label: 'ALESIA (2024)', url: 'https://pubmed.ncbi.nlm.nih.gov/39282663/' }
+    ],
+    sideEffects: 'CPK elevation, myalgia, constipation, hepatotoxicity, bradycardia, hemolytic anemia'
+  },
+  {
+    generic: 'Brigatinib',
+    brand: 'Alunbrig',
+    pfs: [{ value: '24.0', context: '' }],
+    trials: [{ label: 'ALTA-1L (2021)', url: 'https://doi.org/10.1016/j.jtho.2021.07.035' }],
+    sideEffects: 'CPK/lipase elevation, hypertension, early-onset pneumonitis'
+  },
+  {
+    generic: 'Ensartinib',
+    brand: 'Ensacove',
+    pfs: [{ value: '25.8', context: '' }],
+    trials: [{ label: 'eXALT3 (2021)', url: 'https://jamanetwork.com/journals/jamaoncology/fullarticle/2783490' }],
+    sideEffects: 'Rash, pruritus, transaminase elevation, edema'
+  },
+  {
+    generic: 'Ceritinib',
+    brand: 'Zykadia',
+    pfs: [{ value: '16.6', context: '' }],
+    pfsDetail: '750 mg fasting regimen',
+    trials: [{ label: 'ASCEND-4 (2017)', url: 'https://doi.org/10.1016/S0140-6736(17)30123-X' }],
+    sideEffects: 'Diarrhea, nausea/vomiting, hepatotoxicity, hyperglycemia, QT prolongation'
+  },
+  {
+    generic: 'Crizotinib',
+    brand: 'Xalkori',
+    pfs: [{ value: '10.9', context: '' }],
+    trials: [{ label: 'PROFILE 1014 (2014)', url: 'https://doi.org/10.1056/NEJMoa1408440' }],
+    sideEffects: 'Visual disturbance, GI toxicity, edema, hepatotoxicity, QT prolongation'
+  }
+];
+
+function alkTkiComparisonTableHtml(){
+  return `
+    <div class="comparison-scroll" role="region" aria-label="ALK TKI comparison table" tabindex="0">
+      <table class="comparison-table">
+        <colgroup>
+          <col style="width:19%;">
+          <col style="width:21%;">
+          <col style="width:20%;">
+          <col style="width:40%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">Drug name（Generic / Brand）</th>
+            <th scope="col">Median PFS（months）</th>
+            <th scope="col">Clinical trial</th>
+            <th scope="col">Major side effects</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${alkTkiComparisonRows.map(row => `
+            <tr>
+              <td><span class="drug-name">${escapeHtml(row.generic)}</span><span class="brand-name">${escapeHtml(row.brand)}</span></td>
+              <td>${row.pfs.map(value => `<strong>${escapeHtml(value.value)}</strong>${escapeHtml(value.context)}`).join('<br>')}${row.pfsDetail ? `<span class="pfs-detail">${escapeHtml(row.pfsDetail)}</span>` : ''}</td>
+              <td><div class="trial-links">${row.trials.map(trial => `<a href="${escapeHtml(trial.url)}" target="_blank" rel="noopener">${escapeHtml(trial.label)} ↗</a>`).join('')}</div></td>
+              <td>${escapeHtml(row.sideEffects)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+    <p class="comparison-note">PFS values are derived from different clinical trials and should not be directly compared.</p>
+  `;
+}
+
+function alkTkiComparisonPanelHtml(){
+  return `
+    <div class="ngs-hit-card">
+      <div class="ngs-hit-head">
+        <span class="ngs-gene">ALK TKI Comparison</span>
+        <span class="ngs-chip">COMPARISON</span>
+      </div>
+      <div class="ngs-hit-body" style="padding:0;gap:0;">${alkTkiComparisonTableHtml()}</div>
+    </div>
+  `;
+}
+
+function hydrateAlkTkiComparisons(){
+  document.querySelectorAll('[data-alk-tki-comparison]').forEach(container => {
+    container.innerHTML = alkTkiComparisonTableHtml();
+  });
+}
+
 function renderNgsResults(matches){
   const box = document.getElementById('ngs-results');
   if (!box) return;
@@ -4718,6 +4765,7 @@ function renderNgsResults(matches){
         <div class="ngs-note">${escapeHtml(item.note)}</div>
       </div>
     </div>
+    ${item.comparison === 'alk-tki' ? alkTkiComparisonPanelHtml() : ''}
   `).join('');
 }
 
@@ -4849,6 +4897,7 @@ async function registerOfflineWorker(){
   } catch (error) {}
 }
 
+hydrateAlkTkiComparisons();
 setPwaManifest();
 registerOfflineWorker();
 
