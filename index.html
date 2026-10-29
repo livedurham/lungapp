@@ -119,6 +119,8 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
   .ngs-hit-card { background:#1e1e1e; border-color:#333333; }
   .ngs-hit-head { background:#0a1530; border-bottom-color:#333333; }
   .ngs-chip { background:#1e1e1e; border-color:#333333; color:#9dbbe0; }
+  .dose-schedule { background:#1a1a1a; border-left-color:#304d70; }
+  .ngs-evidence a { color:#8ab4f8; }
   .footer-dev { color: #555555; }
   .footer-note { color: #555555; }
   .footer-rule { background: #333333; }
@@ -319,6 +321,11 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
 .ngs-hit-body { padding:14px 16px; display:flex; flex-direction:column; gap:10px; }
 .ngs-drug { display:flex; flex-wrap:wrap; gap:6px; align-items:center; font-family:'Noto Sans TC',Arial,sans-serif; font-size:14px; line-height:1.6; }
 .ngs-note { color:var(--ink-muted); font-family:'Noto Sans TC',Arial,sans-serif; font-size:13px; line-height:1.7; }
+.dose-schedule { width:100%; padding:10px 12px; background:var(--surface); border-left:3px solid var(--blue-border); border-radius:4px; color:var(--ink-muted); font-family:'Noto Sans TC',Arial,sans-serif; font-size:13px; line-height:1.75; }
+.dose-schedule strong { color:var(--nsclc); }
+.ngs-evidence { flex-basis:100%; color:var(--ink-muted); font-family:'Noto Sans TC',Arial,sans-serif; font-size:13px; line-height:1.7; }
+.ngs-evidence a { color:#2563eb; font-weight:600; text-decoration:none; }
+.ngs-evidence a:hover { text-decoration:underline; }
 .tag-warn { background:#fff3cd; color:#8a5a00; border:1px solid #e6c46c; }
 
 /* ── Footer ── */
@@ -2999,6 +3006,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
               <span class="tx-plus">+</span>
               <span class="pill pill-chemo">Pemetrexed</span>
             </div>
+            <div class="dose-schedule" data-amivantamab-papillon-dose></div>
             <div class="tx-note ae-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'" style="cursor:pointer;color:var(--nsclc);font-weight:500;">▸ 主要副作用</div>
             <div class="ae-panel" style="display:none;margin-top:6px;padding:10px 12px;background:var(--surface);border-radius:6px;font-size:13px;font-family:'Noto Sans TC',sans-serif;color:var(--ink-light);line-height:1.7;">
               <strong>常見：</strong>皮疹、甲溝炎、輸液反應、低白蛋白血症、VTE<br>
@@ -3007,7 +3015,7 @@ h1 .sub { display:block; font-family:'Noto Sans TC',sans-serif; font-weight:300;
             </div>
             <div class="tx-note ev-toggle" onclick="var p=this.nextElementSibling;p.style.display=p.style.display==='none'?'block':'none'" style="cursor:pointer;color:#2563eb;font-weight:500;font-size:12px;">▸ 臨床試驗依據</div>
             <div class="ev-panel" style="display:none;margin-top:4px;padding:8px 12px;background:#eff6ff;border-left:3px solid #2563eb;border-radius:4px;font-size:12px;font-family:Arial,sans-serif;line-height:1.8;">
-              <div style="margin-bottom:3px;"><strong>PAPILLON</strong>：Amivantamab+Carbo/Peme vs Carbo/Peme，Exon20 ins 1L，mPFS 11.4 vs 6.7mo（HR 0.395） &nbsp;<a href="https://pubmed.ncbi.nlm.nih.gov/37870970/" target="_blank" rel="noopener" style="color:#2563eb;font-size:11px;">PubMed ↗</a></div>
+              <div style="margin-bottom:3px;"><strong>PAPILLON</strong>：Amivantamab+Carbo/Peme vs Carbo/Peme，Exon20 ins 1L，mPFS 11.4 vs 6.7mo（HR 0.395） &nbsp;<a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2306441" target="_blank" rel="noopener" style="color:#2563eb;font-size:11px;">NEJM ↗</a></div>
             </div>
           </div>
           <div class="tx-divider"></div>
@@ -4239,7 +4247,13 @@ window.ngsTargets = [
     badge: 'EGFR',
     match: ctx => reportHas(ctx, /EGFR/i, /(EX(?:ON)?\s*20|EX20|E20).*(INS|INSERTION|插入)|E20INS|EX20INS|A763_Y764INS|D770_N771INS|H773/i),
     drugs: [
-      {name:'Amivantamab + Carboplatin + Pemetrexed', coverage:'健保-限條件', note:'第一線；局部晚期或轉移性 NSCLC，需明確 EGFR exon20 insertion 檢測報告，事前審查；以健保最新正式條文/暫時性支付公告為準。'}
+      {
+        name:'Amivantamab + Carboplatin + Pemetrexed',
+        coverage:'健保-限條件',
+        note:'第一線；局部晚期或轉移性 NSCLC，需明確 EGFR exon20 insertion 檢測報告，事前審查；以健保最新正式條文/暫時性支付公告為準。',
+        dosing:'papillon-iv',
+        evidence:[{label:'PAPILLON (NEJM)', url:'https://www.nejm.org/doi/full/10.1056/NEJMoa2306441'}]
+      }
     ],
     note: '若無法使用 amivantamab 併化療，通常回到非驅動基因路徑評估化療 ± IO。'
   },
@@ -4634,6 +4648,20 @@ function coverageClass(coverage){
   return 'tag-warn';
 }
 
+function amivantamabPapillonDoseHtml(){
+  return `
+    <strong>Amivantamab IV 劑量／interval（依基準體重）</strong><br>
+    <strong>&lt;80 kg：</strong>第 1–4 週 1,400 mg 每週一次（第 1 週分成 Day 1：350 mg、Day 2：1,050 mg）；第 5–6 週不給藥；第 7 週起 1,750 mg，每 3 週一次（Q3W）。<br>
+    <strong>≥80 kg：</strong>第 1–4 週 1,750 mg 每週一次（第 1 週分成 Day 1：350 mg、Day 2：1,400 mg）；第 5–6 週不給藥；第 7 週起 2,100 mg，每 3 週一次（Q3W）。
+  `;
+}
+
+function hydrateAmivantamabPapillonDosing(){
+  document.querySelectorAll('[data-amivantamab-papillon-dose]').forEach(container => {
+    container.innerHTML = amivantamabPapillonDoseHtml();
+  });
+}
+
 const alkTkiComparisonRows = [
   {
     generic: 'Lorlatinib',
@@ -4759,6 +4787,8 @@ function renderNgsResults(matches){
             <span class="pill ${drug.coverage === '自費' ? 'pill-self' : 'pill-immuno'}" style="font-size:13px;">${escapeHtml(drug.name)}</span>
             <span class="pill-tag ${coverageClass(drug.coverage)}">${escapeHtml(drug.coverage)}</span>
             <span class="ngs-note">${escapeHtml(drug.note)}</span>
+            ${drug.dosing === 'papillon-iv' ? `<div class="dose-schedule">${amivantamabPapillonDoseHtml()}</div>` : ''}
+            ${drug.evidence?.length ? `<div class="ngs-evidence"><strong>臨床試驗：</strong> ${drug.evidence.map(source => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.label)} ↗</a>`).join(' · ')}</div>` : ''}
           </div>
         `).join('')}
         <div class="tx-divider"></div>
@@ -4897,6 +4927,7 @@ async function registerOfflineWorker(){
   } catch (error) {}
 }
 
+hydrateAmivantamabPapillonDosing();
 hydrateAlkTkiComparisons();
 setPwaManifest();
 registerOfflineWorker();
